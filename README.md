@@ -12,13 +12,14 @@ Este projeto foi desenvolvido para processar arquivos CSV contendo informações
 - Biblioteca para leitura de arquivos CSV: CsvHelper
 
 <h4>Funcionalidades Implementadas</h4>
-Leitura de Arquivos CSV: O sistema lê todos os arquivos CSV de uma pasta designada, contendo informações sobre os funcionários de diferentes departamentos.
 
-Processamento dos Dados: Os dados dos arquivos CSV são processados de forma assincrona para calcular métricas como o valor total a pagar a cada departamento, valor total de descontos, horas extras, dias extras, etc.
+- Leitura de Arquivos CSV: O sistema lê todos os arquivos CSV de uma pasta designada, contendo informações sobre os funcionários de diferentes departamentos.
 
-Geração de Saída em JSON: Com base nos cálculos realizados, o sistema gera um arquivo de saída no formato JSON contendo informações detalhadas sobre cada departamento e seus respectivos funcionários.
+- Processamento dos Dados: Os dados dos arquivos CSV são processados de forma assincrona para calcular métricas como o valor total a pagar a cada departamento, valor total de descontos, horas extras, dias extras, etc.
 
-Cálculos Específicos: Foram implementados métodos para calcular total a receber de cada funcionário, horas extras, horas debitadas, dias de falta, dias extras e dias trabalhados.
+- Geração de Saída em JSON: Com base nos cálculos realizados, o sistema gera um arquivo de saída no formato JSON contendo informações detalhadas sobre cada departamento e seus respectivos funcionários.
+
+- Cálculos Específicos: Foram implementados métodos para calcular total a receber de cada funcionário, horas extras, horas debitadas, dias de falta, dias extras e dias trabalhados.
 
 <h4>Estrutura do Projeto</h4>
 O projeto segue a arquitetura MVC (Model-View-Controller) com uma pasta adicional chamada "Services", que guarda as regras de negócio e os serviços executados no código.
