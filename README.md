@@ -5,11 +5,11 @@ Este projeto foi desenvolvido para processar arquivos CSV contendo informações
 
 <h4>Tecnologias Utilizadas</h4>
 
--Linguagem de Programação: C#
+- Linguagem de Programação: C#
 
--Framework: .NET (ASP.NET MVC)
+- Framework: .NET (ASP.NET MVC)
 
--Biblioteca para leitura de arquivos CSV: CsvHelper
+- Biblioteca para leitura de arquivos CSV: CsvHelper
 
 <h4>Funcionalidades Implementadas</h4>
 Leitura de Arquivos CSV: O sistema lê todos os arquivos CSV de uma pasta designada, contendo informações sobre os funcionários de diferentes departamentos.
