@@ -7,7 +7,6 @@ Este projeto foi desenvolvido para processar arquivos CSV contendo informações
 Linguagem de Programação: C#
 
 Framework: .NET (ASP.NET MVC)
-
 Biblioteca para leitura de arquivos CSV: CsvHelper
 
 <h4>Funcionalidades Implementadas</h4>
