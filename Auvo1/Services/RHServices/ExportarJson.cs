@@ -9,11 +9,15 @@ public class ExportarJson
     {
         try
         {
-            // Serializar os departamentos para JSON
-            string json = JsonSerializer.Serialize(departamentos, new JsonSerializerOptions
+            // Configurar as opções de serialização
+            var options = new JsonSerializerOptions
             {
-                WriteIndented = true 
-            });
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            };
+
+            // Serializar os departamentos para JSON
+            string json = JsonSerializer.Serialize(departamentos, options);
 
             // Escrever o JSON no arquivo de saída
             await File.WriteAllTextAsync(arquivoSaida, json);

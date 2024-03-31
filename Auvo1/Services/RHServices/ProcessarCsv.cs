@@ -57,25 +57,33 @@ public class ProcessarCsv
             using (var reader = new StreamReader(arquivo))
             using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
             {
-                csv.Context.RegisterClassMap<FuncionarioMap>(); 
+                csv.Context.RegisterClassMap<FuncionarioMapModel>(); 
 
-                Dictionary<int, List<FuncionarioCsv>> funcionariosInfo = new Dictionary<int, List<FuncionarioCsv>>();
+                Dictionary<int, List<FuncionarioCsvModel>> funcionariosInfo = new Dictionary<int, List<FuncionarioCsvModel>>();
                 decimal departamentoTotalPagar = 0;
                 decimal departamentoTotalDescontos = 0;
                 decimal departamentoTotalExtras = 0;
 
                 while (csv.Read())
                 {
-                    var funcionarioInfoCsv = csv.GetRecord<FuncionarioCsv>();
-
-                    if (!funcionariosInfo.ContainsKey(funcionarioInfoCsv.Codigo))
+                    try
                     {
-                        funcionariosInfo.Add(funcionarioInfoCsv.Codigo, new List<FuncionarioCsv>());
+                        var funcionarioInfoCsv = csv.GetRecord<FuncionarioCsvModel>();
+
+                        if (!funcionariosInfo.ContainsKey(funcionarioInfoCsv.Codigo))
+                        {
+                            funcionariosInfo.Add(funcionarioInfoCsv.Codigo, new List<FuncionarioCsvModel>());
+                        }
+
+                        funcionariosInfo[funcionarioInfoCsv.Codigo].Add(funcionarioInfoCsv);
                     }
-
-                    funcionariosInfo[funcionarioInfoCsv.Codigo].Add(funcionarioInfoCsv);
-
+                    catch(CsvHelperException ex) {
+                        Console.WriteLine($"O arquivo '\"{arquivo}\"' contém informações de funcionários inconsistentes portanto não será processado");
+                        //Passa para o próximo CSV na pasta e continua o processamento.
+                        return;
+                    }
                 }
+
                 foreach (var funcionario in funcionariosInfo)
                 {
                     var qtdRegistros = funcionario.Value.Count;
@@ -144,7 +152,7 @@ public class ProcessarCsv
                         totalReceber -= valorDebitado;
                     }
 
-                    var funcionarioJson = new FuncionarioJson
+                    var funcionarioJson = new FuncionarioJsonModel
                     {
                         Nome = funcionarioNome,
                         Codigo = funcionarioCodigo,

@@ -13,9 +13,9 @@ public class DepartamentoModel
     public decimal TotalPagar { get; set; }
     public decimal TotalDescontos { get; set; }
     public decimal TotalExtras { get; set; }
-    public List<FuncionarioJson> Funcionarios { get; set; } = new List<FuncionarioJson>(); 
+    public List<FuncionarioJsonModel> Funcionarios { get; set; } = new List<FuncionarioJsonModel>(); 
 }
-public class FuncionarioCsv
+public class FuncionarioCsvModel
 {
     public string Nome { get; set; } = string.Empty;
     public int Codigo { get; set; }
@@ -26,7 +26,7 @@ public class FuncionarioCsv
     public TimeSpan Saida { get; set; }
 }
 
-public class FuncionarioJson
+public class FuncionarioJsonModel
 {
     public string Nome { get; set; } = string.Empty;
     public int Codigo { get; set; }
@@ -45,9 +45,9 @@ public class InfoGanhoDiarioModel
     public int HorasExtras { get; set; }
 }
 
-public class FuncionarioMap : ClassMap<FuncionarioCsv>
+public class FuncionarioMapModel : ClassMap<FuncionarioCsvModel>
 {
-    public FuncionarioMap()
+    public FuncionarioMapModel()
     {
         Map(m => m.Codigo).Name("Código");
         Map(m => m.Nome).Name("Nome");
