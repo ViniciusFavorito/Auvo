@@ -14,7 +14,6 @@ public class DepartamentoModel
     public decimal TotalDescontos { get; set; }
     public decimal TotalExtras { get; set; }
     public List<FuncionarioJson> Funcionarios { get; set; } = new List<FuncionarioJson>(); 
-
 }
 public class FuncionarioCsv
 {
@@ -29,7 +28,6 @@ public class FuncionarioCsv
 
 public class FuncionarioJson
 {
-
     public string Nome { get; set; } = string.Empty;
     public int Codigo { get; set; }
     public decimal TotalReceber { get; set; }

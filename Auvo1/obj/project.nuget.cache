@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i/JmQLzlzZRID2idjqLYdRj9V1L8+ArRDUmzp1fTBdRdez5GcDnMXz2ghCY52YB+HgriDnOa8b/InlC/JoVV6A==",
+  "dgSpecHash": "RKme7Ex/yprsGsfSQz6BulaFp6hZVK+jWkpGLdwwH3BRoLqRFy7j8ODGTAY97HTjl9SvTx2CWxx+PQGQ0eb5Lg==",
   "success": true,
-  "projectFilePath": "C:\\Auvo\\Auvo1\\Auvo1\\Auvo1.csproj",
+  "projectFilePath": "C:\\AuvoRepo\\Auvo\\Auvo1\\Auvo1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tchuc\\.nuget\\packages\\csvhelper\\31.0.2\\csvhelper.31.0.2.nupkg.sha512",
     "C:\\Users\\tchuc\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",

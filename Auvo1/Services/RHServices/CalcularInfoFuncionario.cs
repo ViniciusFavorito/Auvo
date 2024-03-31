@@ -5,50 +5,56 @@ namespace Auvo1.Services.RHServices;
 
 public class CalcularInfoFuncionario
 {
-    public int ObterHorasTrabalhadas(TimeSpan horaEntrada, TimeSpan horaSaida, string horaAlmoco)
+    public async Task<int> ObterHorasTrabalhadas(TimeSpan horaEntrada, TimeSpan horaSaida, string horaAlmoco)
     {
-        var arrayStringHoraAlmoco = horaAlmoco.Split('-');
-        TimeSpan inicioAlmoco = TimeSpan.Parse(arrayStringHoraAlmoco[0]);
-        TimeSpan fimAlmoco = TimeSpan.Parse(arrayStringHoraAlmoco[1]);
+        return await Task.Run(() => {
+            var arrayStringHoraAlmoco = horaAlmoco.Split('-');
+            TimeSpan inicioAlmoco = TimeSpan.Parse(arrayStringHoraAlmoco[0]);
+            TimeSpan fimAlmoco = TimeSpan.Parse(arrayStringHoraAlmoco[1]);
 
-        var horasTrabalhadas = (horaSaida - horaEntrada) - (fimAlmoco - inicioAlmoco);
+            var horasTrabalhadas = (horaSaida - horaEntrada) - (fimAlmoco - inicioAlmoco);
 
-        return (int)horasTrabalhadas.TotalHours;
+            return (int)horasTrabalhadas.TotalHours;
+        });
     }
 
-    public InfoGanhoDiarioModel ObterGanhoDiario(int horasTrabalhadas, string stringValorHora)
+    public async Task<InfoGanhoDiarioModel> ObterGanhoDiario(int horasTrabalhadas, string stringValorHora)
     {
-        var arrayStringValorHora = stringValorHora.Split("R$");
-        string valorHoraString = arrayStringValorHora[1].Trim().Replace(",", ".").Replace(" ", "");
-        decimal valorHora;
+        var horasExtras = await ObterHorasExtras(horasTrabalhadas);
 
-        if (!decimal.TryParse(valorHoraString.Trim(), NumberStyles.Number, CultureInfo.InvariantCulture, out valorHora))
-        {
-            // Se der algum erro...
-            throw new ArgumentException("Valor inválido na conversão do Valor Hora");
-        }
+        return await Task.Run(() => {
+            var arrayStringValorHora = stringValorHora.Split("R$");
+            string valorHoraString = arrayStringValorHora[1].Trim().Replace(",", ".").Replace(" ", "");
+            decimal valorHora;
 
-        var horasExtras = ObterHorasExtras(horasTrabalhadas);
+            if (!decimal.TryParse(valorHoraString.Trim(), NumberStyles.Number, CultureInfo.InvariantCulture, out valorHora))
+            {
+                // Se der algum erro...
+                throw new ArgumentException("Valor inválido na conversão do Valor Hora");
+            }
 
-        decimal ganhoDiarioPadrao = valorHora * horasTrabalhadas;
+            decimal ganhoDiarioPadrao = valorHora * horasTrabalhadas;
 
-        decimal ganhoDiario = ganhoDiarioPadrao + (horasExtras);
+            decimal ganhoDiario = ganhoDiarioPadrao + (horasExtras);
 
-        var infoGanhoDiario = new InfoGanhoDiarioModel
-        {
-            ValorDiario = ganhoDiario,
-            ValorDiarioPadrão = ganhoDiarioPadrao,
-            HorasExtras = horasExtras,
-        };
+            var infoGanhoDiario = new InfoGanhoDiarioModel
+            {
+                ValorDiario = ganhoDiario,
+                ValorDiarioPadrão = ganhoDiarioPadrao,
+                HorasExtras = horasExtras,
+            };
 
-        return infoGanhoDiario;
+            return infoGanhoDiario;
+        });
     }
 
     //Pode retornar tanto hora extra feita quanto hora faltante caso o valor seja negativo
-    public int ObterHorasExtras(int horasTrabalhadas)
+    public async Task<int> ObterHorasExtras(int horasTrabalhadas)
     {
-        var horasExtras = horasTrabalhadas - 8;
+        return await Task.Run(() => {
+            var horasExtras = horasTrabalhadas - 8;
 
-        return horasExtras;
+            return horasExtras;
+        });
     }
 }

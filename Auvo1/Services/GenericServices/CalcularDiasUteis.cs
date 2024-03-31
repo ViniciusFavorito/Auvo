@@ -12,26 +12,29 @@ public class CalcularDiasUteis
 {
     public List<DiaUtilModel> DiasUteis { get; set; } = new List<DiaUtilModel>();
 
-    public List<DateTime> Calcular(string mesVigente, string anoVigente)
+    public async Task<List<DateTime>> Calcular(string mesVigente, string anoVigente)
     {
-        List<DateTime> diasUteis = new List<DateTime>();
-
-        mesVigente = new ConverterMesParaIngles().Converter(mesVigente);
-
-        string dataString = $"01-{mesVigente}-{anoVigente}";
-
-        DateTime primeiroDiaDoMes = DateTime.ParseExact(dataString, "dd-MMMM-yyyy", CultureInfo.InvariantCulture);
-
-        DateTime ultimoDiaDoMes = primeiroDiaDoMes.AddMonths(1).AddDays(-1);
-
-        for (DateTime dia = primeiroDiaDoMes; dia <= ultimoDiaDoMes; dia = dia.AddDays(1))
+        return await Task.Run(() =>
         {
-            if (dia.DayOfWeek != DayOfWeek.Saturday && dia.DayOfWeek != DayOfWeek.Sunday)
-            {
-                diasUteis.Add(dia);
-            }
-        }
+            List<DateTime> diasUteis = new List<DateTime>();
 
-        return diasUteis;
+            mesVigente = new ConverterMesParaIngles().Converter(mesVigente);
+
+            string dataString = $"01-{mesVigente}-{anoVigente}";
+
+            DateTime primeiroDiaDoMes = DateTime.ParseExact(dataString, "dd-MMMM-yyyy", CultureInfo.InvariantCulture);
+
+            DateTime ultimoDiaDoMes = primeiroDiaDoMes.AddMonths(1).AddDays(-1);
+
+            for (DateTime dia = primeiroDiaDoMes; dia <= ultimoDiaDoMes; dia = dia.AddDays(1))
+            {
+                if (dia.DayOfWeek != DayOfWeek.Saturday && dia.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    diasUteis.Add(dia);
+                }
+            }
+
+            return diasUteis;
+        });
     }
 }

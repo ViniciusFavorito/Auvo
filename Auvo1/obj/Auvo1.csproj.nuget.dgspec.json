@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Auvo\\Auvo1\\Auvo1\\Auvo1.csproj": {}
+    "C:\\AuvoRepo\\Auvo\\Auvo1\\Auvo1.csproj": {}
   },
   "projects": {
-    "C:\\Auvo\\Auvo1\\Auvo1\\Auvo1.csproj": {
+    "C:\\AuvoRepo\\Auvo\\Auvo1\\Auvo1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Auvo\\Auvo1\\Auvo1\\Auvo1.csproj",
+        "projectUniqueName": "C:\\AuvoRepo\\Auvo\\Auvo1\\Auvo1.csproj",
         "projectName": "Auvo1",
-        "projectPath": "C:\\Auvo\\Auvo1\\Auvo1\\Auvo1.csproj",
+        "projectPath": "C:\\AuvoRepo\\Auvo\\Auvo1\\Auvo1.csproj",
         "packagesPath": "C:\\Users\\tchuc\\.nuget\\packages\\",
-        "outputPath": "C:\\Auvo\\Auvo1\\Auvo1\\obj\\",
+        "outputPath": "C:\\AuvoRepo\\Auvo\\Auvo1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"

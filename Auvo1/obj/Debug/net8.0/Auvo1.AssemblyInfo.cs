@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Auvo1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce574dbb83e066fb4190e0464b64b86286e502c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Auvo1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Auvo1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

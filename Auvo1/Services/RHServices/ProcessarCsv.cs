@@ -16,13 +16,7 @@ public class ProcessarCsv
         {
             string[] arquivosCSV = Directory.GetFiles(pasta, "*.csv");
 
-            List<Task> tasks = new List<Task>();
-
-            foreach (string arquivo in arquivosCSV)
-            {
-                Task task = ProcessarArquivoCSVAsync(arquivo, departamentos);
-                tasks.Add(task);
-            }
+            var tasks = arquivosCSV.Select(arquivo => Task.Run(() => ProcessarArquivoCSVAsync(arquivo, departamentos))).ToList();
 
             await Task.WhenAll(tasks);
 
@@ -96,16 +90,16 @@ public class ProcessarCsv
                     decimal totalReceberDia = 0;
                     InfoGanhoDiarioModel infoGanhoDiario;
                     List<DateTime> diasTrabalhados = new List<DateTime>();
-                    List<DateTime> diasUteis = new CalcularDiasUteis().Calcular(mesVigencia, anoVigencia);
+                    List<DateTime> diasUteis = await new CalcularDiasUteis().Calcular(mesVigencia, anoVigencia);
 
                     for (int i = 0; i < qtdRegistros; i++)
                     {
                         funcionarioNome = funcionario.Value[i].Nome;
                         funcionarioCodigo = funcionario.Value[i].Codigo;
 
-                        horasTrabalhadas = new CalcularInfoFuncionario().ObterHorasTrabalhadas(funcionario.Value[i].Entrada, funcionario.Value[i].Saida, funcionario.Value[i].Almoco);
+                        horasTrabalhadas = await new CalcularInfoFuncionario().ObterHorasTrabalhadas(funcionario.Value[i].Entrada, funcionario.Value[i].Saida, funcionario.Value[i].Almoco);
 
-                        infoGanhoDiario = new CalcularInfoFuncionario().ObterGanhoDiario(horasTrabalhadas, funcionario.Value[i].ValorHora);
+                        infoGanhoDiario = await new CalcularInfoFuncionario().ObterGanhoDiario(horasTrabalhadas, funcionario.Value[i].ValorHora);
 
                         if (infoGanhoDiario.HorasExtras < 0)
                         {

@@ -14,7 +14,6 @@ public class RHController : Controller
         return departamentos;
     }
 
-
     public async Task<IActionResult> GerarSaidaJSON(List<DepartamentoModel> departamentos, string arquivoSaida)
     {
         await _exportarJson.Exportar(departamentos, arquivoSaida);

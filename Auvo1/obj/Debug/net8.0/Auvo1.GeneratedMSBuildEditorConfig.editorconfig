@@ -9,43 +9,43 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Auvo1
 build_property.RootNamespace = Auvo1
-build_property.ProjectDir = C:\Auvo\Auvo1\Auvo1\
+build_property.ProjectDir = C:\AuvoRepo\Auvo\Auvo1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Auvo\Auvo1\Auvo1
+build_property.MSBuildProjectDirectory = C:\AuvoRepo\Auvo\Auvo1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/Home/About.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/Home/Index.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/Home/Resultado.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/Home/Resultado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXN1bHRhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/Shared/Error.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/_ViewImports.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/_ViewStart.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Auvo/Auvo1/Auvo1/Views/Shared/_Layout.cshtml]
+[C:/AuvoRepo/Auvo/Auvo1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7t3qv5e4nr
