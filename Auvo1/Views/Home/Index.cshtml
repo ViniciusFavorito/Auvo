@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+<div >
+    <h2>Informações do Candidato</h2>
+    <p><b>Nome:</b> Vinicius Favorito Rodrigues</p>
+    <p><b>Cargo Pretendido:</b> Desenvolvedor .NET Pleno</p>
+    <p><b>Pretensão Salarial:</b> Como foi dito na reunião, gostaria muito que fosse algo por volta de 8k Líquido(Não sei quanto equivale o valor bruto) já que o modelo de contratação é CLT. </p>
+    <p><b>Mas reforço que estou aberto a negociações.</b></p>
+    <p><b>Data do Teste:</b> 01/04/2024</p>
+</div>
+
+
+<div >
+    <div style="margin-top:6rem;">
+        <div>
+            <h1>Execução do Processo</h1>
+        </div>
+        <div>
+            @using (Html.BeginForm("ProcessarArquivos", "Home", FormMethod.Post))
+            {
+                <label for="pasta">Indique o caminho contendo os Arquivos CSV:</label>
+                <input type="text" id="pasta" name="pasta" placeholder="Ex: C:\Arquivo a Importar" />
+                <button type="submit">Processar Arquivos</button>
+            }
+        </div>
+    </div>
+</div>

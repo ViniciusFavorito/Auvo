@@ -1,0 +1,11 @@
+﻿@model List<DepartamentoModel>
+
+<h2>Resultado do Processamento</h2>
+
+@foreach (var departamento in Model)
+{
+    <h4>@departamento.Nome</h4>
+    <p>Total a Pagar: R$ @departamento.TotalPagar</p>
+    <p>Total de Descontos: R$ @departamento.TotalDescontos</p>
+    <p>Total de Horas Extras: R$ @departamento.TotalExtras</p>
+}

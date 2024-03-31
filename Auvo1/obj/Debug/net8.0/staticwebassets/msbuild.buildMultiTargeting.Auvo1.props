@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Auvo1.props" />
+</Project>
