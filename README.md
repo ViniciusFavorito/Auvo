@@ -31,6 +31,7 @@ O projeto segue a arquitetura MVC (Model-View-Controller) com uma pasta adiciona
 - Controller: Gerencia o fluxo de informações entre a interface do usuário e o modelo de dados. No RHController, as ações ProcessarArquivosCSV e GerarSaidaJSON coordenam o processamento dos arquivos CSV e a geração do arquivo de saída JSON, respectivamente. Essas ações fazem uso dos serviços definidos na pasta "Services" para realizar as operações específicas, mantendo a lógica de negócio separada das responsabilidades do controlador.
 
 <h4>Fluxo de Funcionamento</h4>
+
 1. O usuário fornece o caminho da pasta contendo os arquivos CSV.
 
 2. O sistema lê todos os arquivos CSV na pasta especificada.
@@ -42,9 +43,13 @@ O projeto segue a arquitetura MVC (Model-View-Controller) com uma pasta adiciona
 5. Um arquivo JSON é gerado contendo os resultados calculados e estruturado conforme os requisitos especificados.
 
 <h4>Execução do Projeto</h4>
+
 Para executar o projeto:
 
 1. Abra a solução no Visual Studio.
+
 2. Compile e execute o projeto.
-3. Acesse a página inicial do aplicativo e forneça o caminho da pasta contendo os arquivos CSV.
-4. Aguarde o processamento dos arquivos e a geração do arquivo de saída JSON na própria pasta que foram lidos os arquivos CSV.
+
+3. Acesse a página inicial do aplicativo e forneça o caminho da pasta contendo os arquivos CSV
+
+4. .Aguarde o processamento dos arquivos e a geração do arquivo de saída JSON na própria pasta que foram lidos os arquivos CSV.
